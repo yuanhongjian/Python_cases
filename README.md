@@ -1,5 +1,5 @@
 # Python_small_cases
-Here are some Python cases I've done during learning Python
+Here are some basic Python cases I've done.
 
 1. Tianji's strategy in horsing
 
@@ -8,3 +8,11 @@ I use the same strategy as that in the famous ancient story to make a game of ba
 2. Paper/Scissor/Stone
 
 The strategy of it is similar to case1.
+
+3. HR system
+
+This is a system that a HR can use to record the name, the salary and the kpi of one of the employees and also there is a rating of kpi. (Classmethod)
+
+4. Score recording system
+
+This is a system used to record the students' scores of exams.
