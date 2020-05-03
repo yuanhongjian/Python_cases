@@ -1,29 +1,29 @@
 class scores():
 
     @classmethod
-    def input_scores(self):
-        self.name = input('Please tell me the name: ')
-        self.chinese_scores = int(input('Please tell me chinese scores: '))
-        self.math_scores = int(input("Please tell me math scores: "))
+    def input_scores(cls):
+        cls.name = input('Please tell me the name: ')
+        cls.chinese_scores = int(input('Please tell me chinese scores: '))
+        cls.math_scores = int(input("Please tell me math scores: "))
 
     @classmethod
-    def print_scores(self):
-        print(self.name + '的成绩单如下：')
-        print('Chinese scores：'+ str(self.chinese_scores))
-        print('Math scores: ' + str(self.math_scores))
+    def print_scores(cls):
+        print(cls.name + '的成绩单如下：')
+        print('Chinese scores：'+ str(cls.chinese_scores))
+        print('Math scores: ' + str(cls.math_scores))
 
     @classmethod
-    def print_mean_scores(self):
-        self.mean_scores = (self.chinese_scores + self.math_scores) / 2
-        print("The mean score is: " + str(self.mean_scores))
+    def print_mean_scores(cls):
+        cls.mean_scores = (cls.chinese_scores + cls.math_scores) / 2
+        print("The mean score is: " + str(cls.mean_scores))
 
     @classmethod
-    def rating(self):
-        if self.mean_scores >= 90:
+    def rating(cls):
+        if cls.mean_scores >= 90:
             print("Very good")
-        elif self.mean_scores >= 80:
+        elif cls.mean_scores >= 80:
             print("good")
-        elif self.mean_scores >= 60:
+        elif cls.mean_scores >= 60:
             print("Not bad")
         else:
             print("FAIL")
