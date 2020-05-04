@@ -1,97 +1,3 @@
-# 1
-'''
-def show_role(player_life,player_attack,enemy_life,enemy_attack):
-    print('【玩家】\n血量：%s\n攻击：%s'%(player_life,player_attack))
-    print('------------------------')
-    time.sleep(1)
-    print('【敌人】\n血量：%s\n攻击：%s'%(enemy_life,enemy_attack))
-    print('-----------------------')
-'''
-'''
-
-def pk_role(player_life, player_attack, enemy_life, enemy_attack):
-    while player_life > 0 and enemy_life > 0:
-        player_life = player_life - enemy_attack
-        enemy_life = enemy_life - player_attack
-        time.sleep(1)
-        print('你发起了攻击，【敌人】剩余血量%s'%(enemy_life))
-        print('敌人向你发起了攻击，【玩家】剩余血量%s'%(player_life))
-        print('-----------------------')
-    show_result(player_life, enemy_life)
-
-def show_result(player_life, enemy_life):
-    if player_life > 0 and enemy_life <= 0:
-        print('敌人死翘翘了，这局你赢了')
-    elif player_life <= 0 and enemy_life > 0:
-        print('悲催，这局敌人把你干掉了！')
-    else:
-        print('哎呀，这局你和敌人同归于尽了！')
-    print('-----------------------')
-
-def main(player_life, player_attack, enemy_life, enemy_attack):
-    show_role(player_life,player_attack,enemy_life,enemy_attack)
-    pk_role(player_life,player_attack,enemy_life,enemy_attack)
-
-
-
-# 2
-import time, random
-
-player_list = ['【狂血战士】', '【森林箭手】', '【光明骑士】', '【独行剑客】', '【格斗大师】', '【枪弹专家】']
-enemy_list = ['【暗黑战士】', '【黑暗弩手】', '【暗夜骑士】', '【嗜血刀客】', '【首席刺客】', '【陷阱之王】']
-players = random.sample(player_list, 3)
-enemies = random.sample(enemy_list, 3)
-player_info = {}
-enemy_info = {}
-
-
-# 随机生成两种属性
-def born_role():
-    life = random.randint(100, 180)
-    attack = random.randint(30, 50)
-    return life, attack  # return 多个元素时，返回一个元组（昨天课堂有讲）
-
-
-# 给角色生成随机属性，并展示角色信息。
-def show_role():
-    for i in range(3):
-        player_info[players[i]] = born_role()
-        enemy_info[enemies[i]] = born_role()
-
-    # 展示我方的3个角色
-    print('----------------- 角色信息 -----------------')
-    print('你的人物：')
-    for i in range(3):
-        print('%s  血量：%d  攻击：%d'
-              % (players[i], player_info[players[i]][0], player_info[players[i]][1]))
-    print('--------------------------------------------')
-    print('电脑敌人：')
-
-    # 展示敌方的3个角色
-    for i in range(3):
-        print('%s  血量：%d  攻击：%d'
-              % (enemies[i], enemy_info[enemies[i]][0], enemy_info[enemies[i]][1]))
-    print('--------------------------------------------')
-
-
-show_role()
-'''
-'''
-list1 = ['a', 'b', 'c']
-dict1 = {}
-
-for i in range(3):
-    order = int(input(list1[i] + "第几个？"))
-    dict1[order] = list1[i]
-print(dict1)
-
-list2 = []
-for i in range(1,4):
-    list2.append(dict1[i])
-
-print(list2)
-'''
-
 import time, random
 
 # 需要的数据和变量放在开头
@@ -103,20 +9,20 @@ player_info = {}
 enemy_info = {}
 
 
-# 随机生成角色的属性
+# the role
 def born_role():
     life = random.randint(100, 180)
     attack = random.randint(30, 50)
     return life, attack
 
 
-# 生成和展示角色信息
+# the info of the role
 def show_role():
     for i in range(3):
         player_info[players[i]] = born_role()
         enemy_info[enemies[i]] = born_role()
 
-    # 展示我方的3个角色
+    # the player's three soldiers
     print('----------------- 角色信息 -----------------')
     print('你的人物：')
     for i in range(3):
@@ -125,20 +31,20 @@ def show_role():
     print('--------------------------------------------')
     print('电脑敌人：')
 
-    # 展示敌方的3个角色
+    # the enemy's three soldiers
     for i in range(3):
         print('%s  血量：%d  攻击：%d'
               % (enemies[i], enemy_info[enemies[i]][0], enemy_info[enemies[i]][1]))
     print('--------------------------------------------')
-    input('请按回车键继续。\n')  # 为了让玩家更有控制感，可以插入类似的代码来切分游戏进程。
+    input('Please press 'enter' to continue。\n')  # 
 
 
-# 角色排序，选择出场顺序。
+# The sequence
 def order_role():
     global players
     order_dict = {}
     for i in range(3):
-        order = int(input('你想将 %s 放在第几个上场？(输入数字1~3)' % players[i]))
+        order = int(input('Which position do you want to put %s ？(Press 1~3)' % players[i]))
         order_dict[order] = players[i]
 
     players = []
