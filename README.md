@@ -16,3 +16,9 @@ This is a system that a HR can use to record the name, the salary and the kpi of
 4. Score recording system
 
 This is a system used to record the students' scores of exams.
+
+5. Taxi_fare_calculation
+
+This is a system used for taxi drivers to calculate the fares as they wish.
+
+6. 
