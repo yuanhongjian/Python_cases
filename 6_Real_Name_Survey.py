@@ -21,5 +21,6 @@ class RealNameSurvey():
                 self.name = input("Please enter the name of the respondent：")
                 self.response[self.name] = self.new_response
 
-
-survey = RealNameSurvey('Where is your birth place? ')
+if __name__ == '__main__':
+    
+    survey = RealNameSurvey('Where is your birth place? ')
