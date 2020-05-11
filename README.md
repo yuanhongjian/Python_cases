@@ -23,3 +23,6 @@ This is a system used for taxi drivers to calculate the fares as they wish.
 
 #### 6. Real Name Survey
 This is a system to make a real-name survey, including record the answer and name of the surveyee.
+
+#### 7. Send simple email
+This system can send simple email, like a few words.
